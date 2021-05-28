@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
     <Nav/>
-    <h1>{{ msg }}</h1>
+    <h1>Welcome to Blog app</h1>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -11,12 +12,7 @@ import Nav from "./layout/nav";
 export default {
   name: 'Home',
   components: {Nav},
-  props: {
-    msg: String
-  },
-  component:{
-    Nav
-  }
+
 }
 </script>
 

@@ -2,8 +2,8 @@
     <div>
         <nav class="navbar navbar-light bg-light ">
             <div class="container-fluid">
-                <a class="navbar-brand px-5" href="#">Blog</a>
-                <button type="button" class="btn btn-primary ">Create</button>
+                <router-link to="/blog" class="navbar-brand px-5" href="#">Blog</router-link>
+                <router-link to="/create" type="button" class="btn btn-success">Create</router-link>
             </div>
         </nav>
     </div>

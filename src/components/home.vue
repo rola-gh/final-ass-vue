@@ -18,5 +18,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  .hello{
+    height: 100vh;
+    background-color: #d0d0d0;
+  }
+  h1{
+    text-align: center;
+    margin-top: 100px;
+    color: darkgreen;
+    font-weight: bolder;
+    font-family: Andalus;
+    font-size: 60px;
+  }
 </style>

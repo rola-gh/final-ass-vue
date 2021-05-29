@@ -2,7 +2,6 @@
   <div class="hello">
     <Nav/>
     <h1>Welcome to Blog app</h1>
-    <router-view></router-view>
   </div>
 </template>
 

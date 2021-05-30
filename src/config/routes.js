@@ -6,6 +6,6 @@ import Home from './../components/home';
 export default [
 	{path:'/blog' , component:Blog},
 	{path:'/create' , component:Create},
-	{path:'/details' , component:Details},
+	{path:'/details/:id' , component:Details , name: 'details'},
 	{path:'/' , component:Home},
 ];

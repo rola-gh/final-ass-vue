@@ -12,7 +12,8 @@
                 <th scope="row">{{item.id}}</th>
                 <td>{{item.title}}</td>
                 <td>
-                    <router-link to="/details" class="navbar-brand" href="#">show</router-link>
+                    <router-link :to="{ name: 'details', params: { id: item.id }}">Show</router-link>
+                    <!--                    <router-link to="/details/${item.id}" id="button" class="navbar-brand" >show</router-link>-->
                 </td>
             </tr>
             </tbody>
@@ -23,26 +24,25 @@
     import Vue from 'vue';
     import VueAxios from 'vue-axios';
     import axios from 'axios'
-    import update from './components/blog/create'
+    import store from './store';
 
-    // console.log('up', update)
     Vue.use(VueAxios , axios)
     export default {
         name:'BlogList',
-        data(){
-            return{
-                list:undefined
+        computed: {
+            list() {
+                return store.getters.blogList;
+
             }
         },
         mounted(){
-        Vue.axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(res=>{
-                this.list = res.data;
-                console.log(res,"res");
+            Vue.axios.get('https://jsonplaceholder.typicode.com/posts')
+                .then(res => {
+                    store.dispatch("fetchBlogList", res.data);
+                    console.log(res.data);
+
                 })
         },
-         addBlog(){
-            this.list.push(update)
-         }
+
     }
 </script>

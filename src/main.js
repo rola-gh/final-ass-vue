@@ -7,6 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css"
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 
+import UUID from "vue-uuid";
+
+Vue.use(UUID);
 
 const router = new VueRouter({
     routes,

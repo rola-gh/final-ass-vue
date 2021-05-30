@@ -67,9 +67,8 @@
 
             },
             update: function () {
-                this.$emit('update');
-                 console.log(this.post,"test")
-
+                this.$emit('update',this.post);
+                 console.log(this.post,"test");
             }
 
         }

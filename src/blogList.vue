@@ -23,7 +23,9 @@
     import Vue from 'vue';
     import VueAxios from 'vue-axios';
     import axios from 'axios'
+    import update from './components/blog/create'
 
+    // console.log('up', update)
     Vue.use(VueAxios , axios)
     export default {
         name:'BlogList',
@@ -36,11 +38,11 @@
         Vue.axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(res=>{
                 this.list = res.data;
-                // console.log(res);
+                console.log(res,"res");
                 })
         },
          addBlog(){
-            this.list.push({})
+            this.list.push(update)
          }
     }
 </script>

@@ -41,13 +41,17 @@
                     5th classification
                 </label>
             </div>
-            <button type="submit" @click="update">Create</button>
+            <button type="submit" >Create</button>
         </form>
     </div>
 </template>
 
 <script>
 	import Nav from "./nav";
+	import store from '../../store';
+	import {uuid} from 'vue-uuid';
+	import Vue from 'vue';
+	// import axios from 'axios';
 
 	export default {
 		name: 'Create',
@@ -57,19 +61,32 @@
 				post:{
 					title:null,
 					content:null,
+					uuid: uuid.v1(),
+					id: null
                 }
             }
         },
         methods:{
 			submitData(e){
-				// console.log(this.post,"test")
 				e.preventDefault();
 
-            },
-            update: function () {
-                this.$emit('update',this.post);
-                 console.log(this.post,"test");
-            }
+				const newID = this.$uuid.v4();
+				const userId = this.$uuid.v1();
+				const obj = {
+					body: this.post.content,
+					title: this.post.title,
+					id: newID,
+					userId
+				};
+
+				// store.dispatch("", obj)
+				Vue.axios.post('https://jsonplaceholder.typicode.com/posts' , obj)
+					.then(res => {
+						store.dispatch("pushBlog",obj);
+						console.log(res);
+
+					})
+			},
 
         }
 	}

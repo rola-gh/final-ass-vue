@@ -3,7 +3,7 @@
         <Nav/>
         <h1>Blog List</h1>
         <div class="blog-list">
-            <BlogList v-on:update="addBlog"/>
+            <BlogList/>
         </div>
     </div>
 </template>

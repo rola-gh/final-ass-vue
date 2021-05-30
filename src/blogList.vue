@@ -35,10 +35,12 @@
         mounted(){
         Vue.axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(res=>{
-                this.list=res.data;
-                console.log(res);
+                this.list = res.data;
+                // console.log(res);
                 })
-        }
-
+        },
+         addBlog(){
+            this.list.push({})
+         }
     }
 </script>

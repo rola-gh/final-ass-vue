@@ -62,12 +62,14 @@
         },
         methods:{
 			submitData(e){
-				console.log(this.post,"test")
+				// console.log(this.post,"test")
 				e.preventDefault();
 
             },
             update: function () {
                 this.$emit('update');
+                 console.log(this.post,"test")
+
             }
 
         }
